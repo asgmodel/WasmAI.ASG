@@ -31,5 +31,16 @@ namespace WasmAI.ASG.V1.Repositories.Share
         {
             _builder = bpr;
         }
+
+        public override Task<IEnumerable<QuestionResponseShareDto>> GetByName(string name)
+        {
+            return base.GetByName(name);
+        }
+
+        public override Task<DataResult<IEnumerable<QuestionResponseShareDto>>> GetByNameDataResult(string name)
+        {
+
+            return base.GetByNameDataResult(name);
+        }
     }
 }

@@ -3,6 +3,7 @@ using AutoGenerator;
 using AutoGenerator.Controllers.Base;
 using AutoGenerator.Repositories.Base;
 using AutoMapper;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
 namespace WasmAI.ASG.V1.BPR.Layers.Base
@@ -43,6 +44,24 @@ namespace WasmAI.ASG.V1.BPR.Layers.Base
             : base(mapper, logger, bPR)
         {
             _bpr = bPR;
+        }
+
+
+        // DataResult Úáì ãÓÊæì ÇáßäÊÑæá  ÊÚÇãá İŞØ ãÚ 
+        [HttpGet("GetByName")]
+        [ProducesResponseType(401)]
+        [ProducesResponseType(200)]
+        [ProducesResponseType(typeof(ProblemDetails), 404)]
+        public virtual async  Task<ActionResult<IEnumerable<TResponse>>> GetByName(string name)
+        {
+
+
+            var  res=await _bpr.GetByNameDataResult(name); // DataResult Úáì ãÓÊæì ÇáßäÊÑæá  ÊÚÇãá İŞØ ãÚ 
+
+            if (res.Success)
+                return Ok(res.Data);
+
+            return BadRequest(res.Message);
         }
     }
 }

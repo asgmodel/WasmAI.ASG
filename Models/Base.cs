@@ -1,10 +1,11 @@
 ﻿using AutoGenerator;
+using AutoGenerator.Config;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace WasmAI.ASG.Models
 {
-
+    //[SchedulerEnabled(true)]
     public class Tactic :ITModel
     {
         [Key]
@@ -127,6 +128,8 @@ namespace WasmAI.ASG.Models
     {
         [Key]
         public string QuestionId { get; set; }
+
+        [ToTranslation]
         public string Text { get; set; }
 
         // علاقة مع المستخدم
@@ -154,6 +157,8 @@ namespace WasmAI.ASG.Models
         [ForeignKey("ApplicationUserId")]
         public ApplicationUser ApplicationUser { get; set; }
     }
+
+    [SchedulerEnabled(true)]
     public class UserSoftware : ITModel
     {
         [Key]

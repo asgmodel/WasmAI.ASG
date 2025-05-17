@@ -13,10 +13,7 @@ namespace WasmAI.ASG.V1.DyModels.Dto.Build.Responses
         /// QuestionId property for DTO.
         /// </summary>
         public String? QuestionId { get; set; }
-        /// <summary>
-        /// Text property for DTO.
-        /// </summary>
-        public String? Text { get; set; }
+        public TranslationData? Text { get; set; } = new();
         /// <summary>
         /// ApplicationUserId property for DTO.
         /// </summary>

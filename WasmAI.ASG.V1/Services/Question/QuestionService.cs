@@ -25,5 +25,23 @@ namespace WasmAI.ASG.V1.Services.Services
         {
             _share = bpr;
         }
+
+
+        //  ÊÌÇæÒ æÊÚÏíá   Çæ  ÇÖÇİÉ ÔÑØ Úáì ÇáÏÇáå 
+
+        public override Task<IEnumerable<QuestionResponseDso>> GetByName(string name)
+        {
+            return base.GetByName(name);
+        }
+
+
+        //  ÇÖÇİÉ  ÑÓÇÆá ÇÎØÇÁ  ÌÏíÏÉ ÎÇÕÉ ÈÇáØÈŞÉ 
+
+        public override Task<DataResult<IEnumerable<QuestionResponseDso>>> GetByNameDataResult(string name)
+        {
+            return base.GetByNameDataResult(name);
+        }
+
+
     }
 }

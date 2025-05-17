@@ -22,6 +22,15 @@ namespace WasmAI.ASG.V1.Controllers.Api
         public QuestionController(IMapper mapper, ILoggerFactory logger, IUseQuestionService bPR) : base(mapper, logger, bPR)
         {
             _service = bPR;
+            
+        }
+
+
+        public override Task<ActionResult<IEnumerable<QuestionResponseDso>>> GetByName(string name)
+        {
+
+           
+            return base.GetByName(name);
         }
     }
 }

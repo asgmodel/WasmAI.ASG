@@ -16,12 +16,19 @@ namespace WasmAI.ASG.V1.Controllers.Api
     //[ApiExplorerSettings(GroupName = "WasmAI.ASG.V1")]
     [Route("api/WasmAI.ASG.V1/Api/[controller]")]
     [ApiController]
-    public class SoftwareController : BaseBPRControllerLayer<SoftwareRequestDso, SoftwareResponseDso, SoftwareCreateVM, SoftwareOutputVM, SoftwareUpdateVM, SoftwareInfoVM, SoftwareDeleteVM, SoftwareFilterVM>
+    public class SoftwareController : BaseBPRControllerLayer<SoftwareRequestDso, SoftwareResponseDso, SoftwareCreateVM, SoftwareOutputVM, SoftwareUpdateVM, SoftwareInfoVM, SoftwareDeleteVM>
     {
         private readonly IUseSoftwareService _service;
         public SoftwareController(IMapper mapper, ILoggerFactory logger, IUseSoftwareService bPR) : base(mapper, logger, bPR)
         {
             _service = bPR;
+        }
+
+        public override Task<ActionResult<SoftwareOutputVM>> CreateAsync([FromBody] SoftwareCreateVM model)
+        {
+
+            
+            return base.CreateAsync(model);
         }
     }
 }

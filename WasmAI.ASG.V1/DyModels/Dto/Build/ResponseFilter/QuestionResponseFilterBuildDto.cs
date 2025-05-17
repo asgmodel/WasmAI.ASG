@@ -13,10 +13,7 @@ namespace WasmAI.ASG.V1.DyModels.Dto.Build.ResponseFilters
         /// QuestionId property for DTO.
         /// </summary>
         public String? QuestionId { get; set; }
-        /// <summary>
-        /// Text property for DTO.
-        /// </summary>
-        public String? Text { get; set; }
+        public string? Text { get; set; }
         /// <summary>
         /// ApplicationUserId property for DTO.
         /// </summary>

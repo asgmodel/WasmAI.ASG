@@ -13,8 +13,8 @@ namespace WasmAI.ASG.V1.DyModels.VMs
     {
         ///
         public String? QuestionId { get; set; }
-        ///
-        public String? Text { get; set; }
+        //
+        public TranslationData? Text { get; set; }
         ///
         public String? ApplicationUserId { get; set; }
     // public ApplicationUserCreateVM? ApplicationUser { get; set; }

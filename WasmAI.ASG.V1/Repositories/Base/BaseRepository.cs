@@ -12,5 +12,16 @@ namespace WasmAI.ASG.V1.Repositories.Base
         public BaseBPRRepository(DataContext db, ILoggerFactory logger) : base(db, logger)
         {
         }
+
+        public Task<IEnumerable<T>> GetByName(string name)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<DataResult<IEnumerable<T>>> GetByNameDataResult(string name)
+        {
+            throw new NotImplementedException();
+        }
+
     }
 }
